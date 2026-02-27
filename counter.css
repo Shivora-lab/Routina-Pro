@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #F2E5D9 !important;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Highlighted Title */
+.main-title {
+    font-size: 32px;
+    font-weight: 850;
+    color: #1B4332;
+    margin: 10px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+} /* Fixed: Added missing bracket here */
+
+.reset-timer {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2D6A4F;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 25px;
+    border: 1px solid rgba(45, 106, 79, 0.1);
+}
+
+/* Input Section */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#taskInput {
+    flex: 2;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(45, 106, 79, 0.2);
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.add-task-btn {
+    flex: 1;
+    background-color: #2D6A4F;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Selector Bar */
+.selector-container {
+    margin-bottom: 30px;
+}
+
+.glass-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(45, 106, 79, 0.3);
+    color: #1B4332;
+    font-weight: bold;
+    outline: none;
+}
+
+/* --- HORIZONTAL BUTTON ROW --- */
+.horizontal-button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Slightly tighter gap for mobile */
+    margin: 20px 0 40px 0;
+}
+
+.action-circle {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Button Colors */
+.btn-red {
+    background: #FFEDED; /* Light Red */
+    color: #D90429;
+    font-size: 28px;
+}
+
+.btn-green-light {
+    background: #E8F5E9; /* Light Green */
+    color: #2D6A4F;
+    font-size: 32px;
+}
+
+.btn-forest {
+    background: #2D6A4F; /* Deep Forest Green */
+    color: white;
+    font-size: 16px; /* Increased slightly for readability */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Interaction */
+.action-circle:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Group Display Area */
+.task-group {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    color: #1B4332;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.log-item {
+    font-size: 14px;
+    color: #444;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.03);
+}

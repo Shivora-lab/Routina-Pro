@@ -1,0 +1,77 @@
+/* Global Lock */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Body Layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F2E5D9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;   /* IMPORTANT: not height */
+}
+
+/* Main Container */
+.container {
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Title */
+.main-title {
+  font-size: 32px;
+  font-weight: 850;
+  color: #1B4332;
+  margin: 10px 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Coming Soon Tag */
+.soon {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2D6A4F;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 25px;
+  border: 1px solid rgba(45, 106, 79, 0.1);
+}
+
+/* Card Container */
+.future-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Future Card */
+.future-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Card Text */
+.future-card h2 {
+  margin-bottom: 15px;
+  color: #4CAF50;
+}
+
+.future-card p {
+  margin: 8px 0;
+  color: #555;
+}

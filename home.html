@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+   <!-- 🔒 Disable Zoom Completely -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,
+        maximum-scale=1.0, user-scalable=no">
+
+  <title>Routina Pro</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar/dark.css">
+  <link rel="stylesheet" href="navbar/bhuttu.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <h1>Routina Pro</h1>
+  </div>
+
+  <!-- Circles -->
+  <div class="circle-row">
+
+    <div class="progress-circle-container">
+      <svg class="progress-circle" width="110" height="110">
+
+        <!-- Background ring -->
+        <circle
+          cx="55" cy="55" r="50"
+          stroke="#bbbbbb"
+          stroke-width="10"
+          fill="none"/>
+
+        <!-- Green progress ring -->
+        <circle
+          class="progress-ring"
+          cx="55" cy="55" r="50"
+          stroke="#4CAF50"
+          stroke-width="10"
+          fill="none"
+          stroke-linecap="round"
+          stroke-dasharray="314"
+          stroke-dashoffset="314"/>
+      </svg>
+
+      <div class="progress-text">0%</div>
+    </div>
+
+    <div class="add-circle" onclick="openPopup()">+</div>
+
+  </div>
+
+  <!-- Habit List -->
+  <div id="habitList"></div>
+
+  <!-- Empty State -->
+  <div id="emptyState" style="display:none;">
+    <div style="text-align:center; margin-top:60px;">
+      <div style="font-size:60px;">📋</div>
+      <h2>No routines yet</h2>
+      <p>Start building your daily discipline.</p>
+      <button onclick="openPopup()">+ Add Your First Routine</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Popup -->
+<div class="popup-overlay" id="popup" onclick="outsideClose(event)" style="backdrop-filter: blur(8px); background: rgba(0,0,0,0.2);">
+  <div class="popup">
+    <div class="popup-header">
+      <span style="font-weight: bold; font-size: 18px;">Add Routine</span>
+      <span class="close-btn" onclick="closePopup()">✕</span>
+    </div>
+    <input type="text" id="popupInput" placeholder="Enter routine" style="background: white; border: 1px solid #ddd; padding: 12px; border-radius: 10px; width: 100%; box-sizing: border-box; margin-bottom: 15px;">
+    <button class="done-popup" onclick="addHabit()" style="width: 100%; padding: 12px; background: #4CAF50; color: white; border: none; border-radius: 10px; font-weight: bold;">Done</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<link rel="stylesheet" href="navbar/nav.css">
+
+<div id="navContainer"></div>
+
+<script>
+  
+fetch("navbar/nav.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navContainer").innerHTML = data;
+  });
+</script>
+
+<script src="navbar/nav.js"></script>
+
+</body>
+</html>
