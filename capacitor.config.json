@@ -1,5 +1,0 @@
-{
-  "appId": "com.example.routina",
-  "appName": "routina-app",
-  "webDir": "npx cap add android"
-}
