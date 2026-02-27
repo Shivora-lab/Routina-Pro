@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <!-- 🔒 Disable Zoom Completely -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,
+        maximum-scale=1.0, user-scalable=no">
+
+    <title>Routina Pro - Counter</title>
+    <link rel="stylesheet" href="counter.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="bhuttu.css">
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="top-bar">
+       <h1 class="main-title">Counter</h1>
+        <span class="reset-timer">Reset in 00:01 am</span>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Add your task (e.g. Water)">
+        <button class="add-task-btn" onclick="addNewTask()">Done</button>
+    </div>
+
+    <div class="selector-container" id="selectorArea" style="display: none;">
+        <select id="taskSelector" class="glass-select"></select>
+    </div>
+
+  <div class="horizontal-button-row">
+        <button class="action-circle btn-red" onclick="resetAll()" title="Reset All">↺</button>
+        <button class="action-circle btn-green-light" onclick="document.getElementById('taskInput').focus()" title="Add New">+</button>
+        <button class="action-circle btn-forest" onclick="handleCount()">COUNT</button>
+    </div>
+    
+    <div id="groupContainer"></div>
+</div>
+
+<div id="navContainer"></div>
+
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navContainer").innerHTML = data;
+      });
+  </script>
+
+<script src="counter.js"></script>
+
+  </body>
+</html>

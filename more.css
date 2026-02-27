@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 90px;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.more-container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.setting-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 15px; /* Added spacing between cards */
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* NEW: Bhuttu Slider Style */
+.bhuttu-slider {
+  background: #ccc;
+  border-radius: 30px;
+}
+
+/* You can change this color to pink in bhuttu.css later */
+input:checked + .bhuttu-slider {
+  background: #FF69B4; 
+}
+.footer-info {
+    text-align: center;
+    margin-top: 40px; /* Pushes it down from the cards */
+    padding-bottom: 80px; /* Keeps it above your Bottom Navbar */
+    color: #888; /* Subtle gray color */
+    font-size: 14px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}

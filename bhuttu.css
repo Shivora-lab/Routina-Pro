@@ -1,0 +1,102 @@
+/* --- 1. GLOBAL BASE & CUTE BACKGROUND --- */
+body.bhuttu-mode {
+    background-color: #FFF0F5 !important; /* Soft Lavender Blush */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 224, 0.4) 0%, transparent 25%);
+    color: #000080 !important; /* Dark Blue for clear reading */
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- 2. FLOATING CUTE EMOJIS --- */
+/* This adds tiny subtle emojis across the background */
+body.bhuttu-mode::before {
+    content: "🌸 ✨ 🎀 🧸 💕 🍬 🌸 ✨ 🎀 🧸 💕 🍬 🌸 ✨ 🎀 🧸 💕 🍬";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    opacity: 0.12; 
+    word-spacing: 60px;
+    line-height: 6;
+    pointer-events: none;
+    z-index: -1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* --- 3. CUTE TEXT & TITLES --- */
+body.bhuttu-mode h1, body.bhuttu-mode h2, body.bhuttu-mode h3,
+body.bhuttu-mode .main-title, body.bhuttu-mode .page-header h1,
+body.bhuttu-mode b, body.bhuttu-mode strong {
+    color: #FF1493 !important; /* Deep Pink Titles */
+    text-shadow: 1px 1px 0px #ffffff;
+}
+
+body.bhuttu-mode p, body.bhuttu-mode span, body.bhuttu-mode label {
+    color: #000080 !important; /* Dark Blue Text */
+}
+
+/* --- 4. STRAWBERRY GLASS CARDS --- */
+body.bhuttu-mode .habit-item, 
+body.bhuttu-mode .alert-card-input, 
+body.bhuttu-mode #alertList .alert-card, 
+body.bhuttu-mode .future-card, 
+body.bhuttu-mode .setting-card, 
+body.bhuttu-mode .task-group {
+    background: rgba(255, 255, 255, 0.75) !important; /* Milky Glass */
+    backdrop-filter: blur(12px) !important;
+    border: 2px solid #FFB6C1 !important; /* Pink Border */
+    border-radius: 22px !important;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3) !important;
+}
+
+/* --- 5. INPUTS & SELECTS (Peach Tints) --- */
+body.bhuttu-mode input, 
+body.bhuttu-mode select, 
+body.bhuttu-mode .glass-select, 
+body.bhuttu-mode #taskInput {
+    background: #FFF5EE !important; /* Seashell White */
+    border: 1.5px solid #FFDAB9 !important; /* Peach Puff Border */
+    color: #333 !important;
+    border-radius: 12px !important;
+}
+
+/* --- 6. CUTE BUTTONS (Pink-Orange Gradient) --- */
+body.bhuttu-mode .main-btn, 
+body.bhuttu-mode .add-task-btn, 
+body.bhuttu-mode .done-popup, 
+body.bhuttu-mode .modal-btn,
+body.bhuttu-mode .done-btn {
+    background: linear-gradient(135deg, #FF69B4, #FFA500) !important; /* Pink to Orange */
+    color: white !important;
+    border: none !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4) !important;
+}
+
+/* Counter Page Circles */
+body.bhuttu-mode .btn-red { background: #FFD1DC !important; color: #D90429 !important; }
+body.bhuttu-mode .btn-green-light { background: #E0FFE0 !important; color: #2D6A4F !important; }
+body.bhuttu-mode .btn-forest { background: #FF69B4 !important; color: white !important; }
+
+/* --- 7. NAVIGATION (Bhuttu Style) --- */
+body.bhuttu-mode .bottom-nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-top: 2px solid #FFB6C1 !important;
+}
+
+body.bhuttu-mode .nav-item.active {
+    color: #FF1493 !important;
+}
+
+/* --- 8. POPUPS --- */
+body.bhuttu-mode .popup, 
+body.bhuttu-mode .modal-content {
+    background: #ffffff !important;
+    border: 3px solid #FFB6C1 !important;
+    border-radius: 25px !important;
+}
