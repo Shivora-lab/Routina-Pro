@@ -1,1 +1,201 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routina Pro - Shared Routine</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: #171a21;
+      border: 1px solid #2a2f3a;
+      border-radius: 20px;
+      padding: 24px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #222733;
+      color: #ffd600;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    .meta {
+      color: #9aa4b2;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .item {
+      background: #0f131a;
+      border: 1px solid #2a2f3a;
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .name {
+      font-weight: 600;
+    }
+
+    .time {
+      color: #ffd600;
+      white-space: nowrap;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #ffd600;
+      color: #111;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #394150;
+    }
+
+    .status {
+      color: #9aa4b2;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .error {
+      color: #ff8080;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Shared from Routina Pro</div>
+    <h1 id="title">Loading...</h1>
+    <div id="meta" class="meta">Please wait</div>
+
+    <ul id="routineList" class="list"></ul>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="openAppBtn">Open in Routina Pro</button>
+      <button class="btn btn-secondary" id="downloadBtn">Download App</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script>
+    function getRoutineId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id") || "sample";
+    }
+
+    async function loadRoutine() {
+      const id = getRoutineId();
+      const status = document.getElementById("status");
+      const title = document.getElementById("title");
+      const meta = document.getElementById("meta");
+      const routineList = document.getElementById("routineList");
+
+      try {
+        const response = await fetch(`./shared-routines/${id}.json`, { cache: "no-store" });
+
+        if (!response.ok) {
+          throw new Error(`File not found: ${id}.json`);
+        }
+
+        const data = await response.json();
+
+        title.textContent = data.title || "Shared Routine";
+        meta.textContent = `By ${data.creator || "Unknown"} • ${data.routines?.length || 0} routines`;
+
+        routineList.innerHTML = "";
+
+        (data.routines || []).forEach((routine) => {
+          const li = document.createElement("li");
+          li.className = "item";
+
+          const left = document.createElement("div");
+          left.className = "name";
+          left.textContent = routine.name || "Routine";
+
+          const right = document.createElement("div");
+          right.className = "time";
+          right.textContent = routine.time || "--:--";
+
+          li.appendChild(left);
+          li.appendChild(right);
+          routineList.appendChild(li);
+        });
+
+        status.textContent = "Preview loaded successfully.";
+      } catch (error) {
+        title.textContent = "Could not load routine";
+        meta.textContent = "";
+        routineList.innerHTML = "";
+        status.textContent = error.message;
+        status.classList.add("error");
+      }
+    }
+
+    document.getElementById("openAppBtn").addEventListener("click", () => {
+      const id = getRoutineId();
+
+      // Placeholder deep link
+      window.location.href = `routinapro://import?id=${encodeURIComponent(id)}`;
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      // Replace with your actual download / update page
+      window.location.href = "./more.html";
+    });
+
+    loadRoutine();
+  </script>
+</body>
+</html>
