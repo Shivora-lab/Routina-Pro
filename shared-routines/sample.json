@@ -1,1 +1,12 @@
 
+{
+  "title": "Exam Routine",
+  "creator": "Shivanshu",
+  "createdAt": "2026-04-21T14:30:00Z",
+  "routines": [
+    { "name": "Wake Up", "time": "06:00", "alarm": true },
+    { "name": "Math Study", "time": "07:00", "alarm": false },
+    { "name": "Breakfast", "time": "09:00", "alarm": false },
+    { "name": "Revision", "time": "18:00", "alarm": true }
+  ]
+}
